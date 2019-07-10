@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "678211729029",
+    "firebase_url": "https://bowlini.firebaseio.com",
+    "project_id": "bowlini",
+    "storage_bucket": "bowlini.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678211729029:android:b1bc1f7d11c075fd",
+        "android_client_info": {
+          "package_name": "com.beokbeok.bowlini"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678211729029-eb5nnsrvbd8co484jqpm9ps2k2fcsqgp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.beokbeok.bowlini",
+            "certificate_hash": "408466aa05cd7090fca4c438c6901d05a8146684"
+          }
+        },
+        {
+          "client_id": "678211729029-rd06r20al761ur07id71pbblt15gcvrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDijAU4TlgUbM4UbFSjZOL3YQ8_Ot67vcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678211729029-rd06r20al761ur07id71pbblt15gcvrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
