@@ -8,6 +8,7 @@ abstract class BaseActivity(
     @LayoutRes
     private val layoutResID: Int
 ) : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layoutResID)
