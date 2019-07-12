@@ -20,5 +20,4 @@ abstract class BaseFragment(
         container,
         false
     )
-
 }
