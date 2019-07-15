@@ -27,7 +27,7 @@ class SignUpInViewModel(
         get() = _auth
     val activityToStart = MutableLiveData<Intent>()
 
-    fun signin() {
+    fun signIn() {
         _googleSignInClient?.let {
             activityToStart.postValue(it.signInIntent)
         }
