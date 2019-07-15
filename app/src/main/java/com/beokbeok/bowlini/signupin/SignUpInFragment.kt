@@ -1,23 +1,36 @@
 package com.beokbeok.bowlini.signupin
 
 
+import android.os.Bundle
+import androidx.lifecycle.Observer
 import com.beokbeok.bowlini.R
 import com.beokbeok.bowlini.base.BaseFragment
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.beokbeok.bowlini.databinding.FragmentSignUpInBinding
 
-class SignUpInFragment : BaseFragment(R.layout.fragment_sign_up_in) {
+class SignUpInFragment : BaseFragment<FragmentSignUpInBinding>(
+    R.layout.fragment_sign_up_in
+) {
 
-    private val googleSignInClient: GoogleSignInClient? by lazy {
-        activity?.let {
-            GoogleSignIn.getClient(
-                it,
-                GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestIdToken(it.getString(R.string.default_web_client_id))
-                    .requestEmail()
-                    .build()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        initBinding()
+    }
+
+    private fun initBinding() {
+        context?.let {
+            val vm = SignUpInViewModel(it)
+            binding.vm = vm
+            binding.lifecycleOwner = this
+            vm.activityToStart.observe(
+                this,
+                Observer { intent ->
+                    startActivityForResult(intent, RC_SIGN_IN)
+                }
             )
         }
+    }
+
+    companion object {
+        private const val RC_SIGN_IN = 9001
     }
 }
