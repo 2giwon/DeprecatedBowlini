@@ -1,2 +1,2 @@
-# Bowlini
-볼링 점수 기록 관리 App
+# Greeting(이름 미정)
+유아 공연 제공 앱
