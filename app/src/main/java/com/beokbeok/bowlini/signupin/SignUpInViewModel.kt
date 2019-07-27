@@ -27,6 +27,7 @@ class SignUpInViewModel(
     }
     private val _auth = FirebaseAuth.getInstance()
     val activityToStart = MutableLiveData<Intent>()
+    val errMsg = MutableLiveData<Throwable>()
 
     fun signIn() {
         _googleSignInClient?.let {
@@ -40,6 +41,7 @@ class SignUpInViewModel(
                 .getResult(ApiException::class.java)
                 ?.idToken
         } catch (e: ApiException) {
+            errMsg.value = e
             return
         }
         _auth.signInWithCredential(

@@ -16,6 +16,7 @@ class SignUpInFragment : BaseFragment<FragmentSignUpInBinding>(
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initBinding()
+        registerObserver()
     }
 
     override fun onActivityResult(
@@ -40,6 +41,15 @@ class SignUpInFragment : BaseFragment<FragmentSignUpInBinding>(
                 }
             )
         }
+    }
+
+    private fun registerObserver() {
+        binding.vm?.errMsg?.observe(
+            this,
+            Observer {
+                showToast(it)
+            }
+        )
     }
 
     companion object {
