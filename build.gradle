@@ -8,7 +8,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0-beta05'
+        classpath 'com.android.tools.build:gradle:3.5.0-rc01'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // firebase sdk
         // 4.3.0 버전으로 사용 시 하기 Warning 이 발생하여, 4.2.0 버전으로 사용
