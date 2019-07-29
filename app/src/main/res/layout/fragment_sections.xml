@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.beokbeok.bowlini.section.SectionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DD1B1E59"
+        tools:ignore="ContentDescription">
+
+        <ImageButton
+            android:id="@+id/button_car1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/front_left_side_47"
+            android:onClick="@{() -> vm.startAllCarActivity()}"
+            android:src="@drawable/section_widget_01_gradient"
+            app:layout_constraintBottom_toTopOf="@+id/button_car2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <TextView
+            android:id="@+id/textview_section01_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/raleway_regular"
+            android:gravity="start|center_vertical"
+            android:text="@string/section01_title"
+            android:textColor="#19000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_car1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_car1"/>
+
+        <TextView
+            android:id="@+id/textview_section01_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_regular"
+            android:gravity="start|center_vertical"
+            android:text="@string/section01_title"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_car1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_car1"/>
+
+        <ImageButton
+            android:id="@+id/button_car2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/land_rover_range_rover"
+            android:src="@drawable/section_widget_02_gradient"
+            app:layout_constraintBottom_toTopOf="@+id/button_car3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_car1"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintWidth_percent="0.8"
+            />
+
+        <TextView
+            android:id="@+id/textview_section02_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/raleway_regular"
+            android:gravity="start|center_vertical"
+            android:text="@string/section02_title"
+            android:textColor="#19000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_car2"
+            app:layout_constraintStart_toStartOf="@+id/textview_section01_title"
+            app:layout_constraintTop_toTopOf="@+id/button_car2"/>
+
+        <TextView
+            android:id="@+id/textview_section02_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_regular"
+            android:gravity="start|center_vertical"
+            android:text="@string/section02_title"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_car2"
+            app:layout_constraintStart_toStartOf="@+id/textview_section01_title"
+            app:layout_constraintTop_toTopOf="@+id/button_car2"/>
+
+        <ImageButton
+            android:id="@+id/button_car3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/tesla_vs_bmw"
+            android:src="@drawable/section_widget_03_gradient"
+            app:layout_constraintBottom_toTopOf="@+id/button_car4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_car2"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintWidth_percent="0.8"/>
+
+        <TextView
+            android:id="@+id/textview_section03_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/raleway_regular"
+            android:gravity="start|center_vertical"
+            android:text="@string/section03_title"
+            android:textColor="#19000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_car3"
+            app:layout_constraintStart_toStartOf="@+id/textview_section01_subtitle"
+            app:layout_constraintTop_toTopOf="@+id/button_car3"/>
+
+        <TextView
+            android:id="@+id/textview_section03_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_regular"
+            android:gravity="start|center_vertical"
+            android:text="@string/section03_title"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_car3"
+            app:layout_constraintStart_toStartOf="@+id/textview_section01_title"
+            app:layout_constraintTop_toTopOf="@+id/button_car3"/>
+
+        <ImageButton
+            android:id="@+id/button_car4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/sport_mode"
+            android:onClick="@{() -> vm.startSettingActivity()}"
+            android:src="@drawable/section_widget_04_gradient"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_car3"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintWidth_percent="0.8"/>
+
+        <TextView
+            android:id="@+id/textview_section04_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/raleway_regular"
+            android:gravity="start|center_vertical"
+            android:text="@string/section04_title"
+            android:textColor="#19000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_car4"
+            app:layout_constraintStart_toStartOf="@+id/textview_section01_subtitle"
+            app:layout_constraintTop_toTopOf="@+id/button_car4"/>
+
+        <TextView
+            android:id="@+id/textview_section04_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_regular"
+            android:gravity="start|center_vertical"
+            android:text="@string/section04_title"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_car4"
+            app:layout_constraintStart_toStartOf="@+id/textview_section01_title"
+            app:layout_constraintTop_toTopOf="@+id/button_car4"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -6,8 +6,8 @@
     tools:context=".signupin.SignUpInActivity">
 
     <fragment
-        android:id="@+id/fg_sign_up_in"
-        android:name="com.beokbeok.bowlini.signupin.SignUpInFragment"
+        android:id="@+id/fm_section_layout"
+        android:name="com.beokbeok.bowlini.section.SectionFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
