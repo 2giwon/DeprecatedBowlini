@@ -14,6 +14,7 @@ buildscript {
         // 4.3.0 버전으로 사용 시 하기 Warning 이 발생하여, 4.2.0 버전으로 사용
         // API 'variant.getMergeResources()' is obsolete and has been replaced with 'variant.getMergeResourcesProvider()'.
         classpath 'com.google.gms:google-services:4.2.0'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.1.0-beta02"
     }
 }
 
