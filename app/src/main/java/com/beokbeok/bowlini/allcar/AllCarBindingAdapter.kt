@@ -7,8 +7,9 @@ import com.beokbeok.bowlini.R
 
 @BindingAdapter("app:srcCompat")
 fun ImageButton.srcCompat(isTextVisible: Boolean) {
-    if(isTextVisible)
+    if (isTextVisible) {
         setImageResource(R.drawable.ic_expand_less_black_36dp)
-    else
+    } else {
         setImageResource(R.drawable.ic_expand_more_black_36dp)
+    }
 }
