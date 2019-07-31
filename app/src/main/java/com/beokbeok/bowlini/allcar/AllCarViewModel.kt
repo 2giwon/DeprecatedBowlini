@@ -7,7 +7,7 @@ import com.beokbeok.bowlini.base.BaseViewModel
 class AllCarViewModel : BaseViewModel() {
 
     @Bindable
-    var isSupportingTextVisible = MutableLiveData<Boolean>().apply {
+    val isSupportingTextVisible = MutableLiveData<Boolean>().apply {
         value = false
     }
 
