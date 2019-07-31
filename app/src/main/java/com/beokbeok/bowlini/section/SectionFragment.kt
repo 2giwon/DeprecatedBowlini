@@ -13,8 +13,7 @@ class SectionFragment : BaseFragment<FragmentSectionsBinding>(R.layout.fragment_
 
     private fun initBinding() {
         context?.let {
-            val vm = SectionViewModel(it)
-            binding.vm = vm
+            binding.vm = SectionViewModel(it)
 
         }
     }
