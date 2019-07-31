@@ -15,8 +15,6 @@ class AllCarAdapter : RecyclerView.Adapter<AllCarAdapter.AllCarViewHolder>() {
     override fun onBindViewHolder(holder: AllCarViewHolder, position: Int) {
         val vm = AllCarViewModel(/*holder.itemView.context*/)
         holder.bind(vm)
-
-        vm.notifyChange()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllCarViewHolder {
@@ -31,27 +29,9 @@ class AllCarAdapter : RecyclerView.Adapter<AllCarAdapter.AllCarViewHolder>() {
 
     class AllCarViewHolder(
         private val binding :ViewDataBinding
-    ) :
-        RecyclerView.ViewHolder(binding.root)
+    ) : RecyclerView.ViewHolder(binding.root)
     {
         fun bind(vm: AllCarViewModel) = binding.setVariable(BR.vm, vm)
     }
 
-//    class ExpandableViewHolder(parent: ViewGroup?, resId: Int) : ViewHolder(parent, resId) {
-//        private val supportingTextView: TextView = itemView.supporting_text
-//        private val expandButton: ImageButton = itemView.expand_button
-//
-//        init {
-//            expandButton.setOnClickListener {
-//                if (supportingTextView.visibility == View.VISIBLE) {
-//                    expandButton.setImageResource(R.drawable.ic_expand_less_black_36dp)
-//                    supportingTextView.visibility = View.GONE
-//                } else {
-//                    expandButton.setImageResource(R.drawable.ic_expand_more_black_36dp)
-//                    supportingTextView.visibility = View.VISIBLE
-//                }
-//            }
-//        }
-//
-//    }
 }
