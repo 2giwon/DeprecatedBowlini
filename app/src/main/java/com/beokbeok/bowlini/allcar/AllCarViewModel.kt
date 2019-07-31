@@ -1,15 +1,18 @@
 package com.beokbeok.bowlini.allcar
 
 import androidx.databinding.Bindable
+import androidx.lifecycle.MutableLiveData
 import com.beokbeok.bowlini.base.BaseViewModel
 
 class AllCarViewModel : BaseViewModel() {
 
     @Bindable
-    var isSupportingTextVisible: Boolean = true
+    var isSupportingTextVisible = MutableLiveData<Boolean>().apply {
+        value = false
+    }
 
     fun onExpandText() {
-        isSupportingTextVisible = !isSupportingTextVisible
+        isSupportingTextVisible.postValue(!(isSupportingTextVisible.value as Boolean))
         notifyChange()
     }
 
