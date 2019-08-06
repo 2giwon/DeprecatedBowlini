@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signupin.SignUpInActivity">
+    tools:context=".section.SectionActivity">
 
     <fragment
-        android:id="@+id/fg_sign_up_in"
-        android:name="com.beokbeok.bowlini.signupin.SignUpInFragment"
+        android:id="@+id/fm_section_layout"
+        android:name="com.beokbeok.bowlini.section.SectionFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
