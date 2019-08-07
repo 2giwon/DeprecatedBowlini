@@ -13,8 +13,7 @@ class AllCarAdapter : RecyclerView.Adapter<AllCarAdapter.AllCarViewHolder>() {
     override fun getItemCount(): Int = 10
 
     override fun onBindViewHolder(holder: AllCarViewHolder, position: Int) {
-        val vm = AllCarCardItemViewModel()
-        holder.bind(vm)
+        holder.bind(AllCarCardItemViewModel())
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllCarViewHolder {
