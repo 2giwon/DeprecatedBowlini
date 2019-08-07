@@ -8,13 +8,8 @@ import com.beokbeok.bowlini.databinding.FragmentSectionsBinding
 class SectionFragment : BaseFragment<FragmentSectionsBinding>(R.layout.fragment_sections) {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        initBinding()
-    }
-
-    private fun initBinding() {
         context?.let {
             binding.vm = SectionViewModel(it)
-
         }
     }
 }

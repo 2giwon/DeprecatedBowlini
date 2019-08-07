@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.beokbeok.bowlini.allcar.AllCarViewModel" />
+            type="com.beokbeok.bowlini.allcar.AllCarCardItemViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"

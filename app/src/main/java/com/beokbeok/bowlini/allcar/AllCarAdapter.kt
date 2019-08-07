@@ -13,7 +13,7 @@ class AllCarAdapter : RecyclerView.Adapter<AllCarAdapter.AllCarViewHolder>() {
     override fun getItemCount(): Int = 10
 
     override fun onBindViewHolder(holder: AllCarViewHolder, position: Int) {
-        val vm = AllCarViewModel(/*holder.itemView.context*/)
+        val vm = AllCarCardItemViewModel()
         holder.bind(vm)
     }
 
@@ -31,7 +31,7 @@ class AllCarAdapter : RecyclerView.Adapter<AllCarAdapter.AllCarViewHolder>() {
         private val binding :ViewDataBinding
     ) : RecyclerView.ViewHolder(binding.root)
     {
-        fun bind(vm: AllCarViewModel) = binding.setVariable(BR.vm, vm)
+        fun bind(vm: AllCarCardItemViewModel) = binding.setVariable(BR.vm, vm)
     }
 
 }

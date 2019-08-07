@@ -1,18 +1,16 @@
 package com.beokbeok.bowlini.allcar
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.beokbeok.bowlini.base.BaseViewModel
 
-class AllCarViewModel : BaseViewModel() {
+class AllCarViewModel: BaseViewModel() {
 
-    val isSupportingTextVisible = MutableLiveData<Boolean>().apply {
-        value = false
-    }
+    private var _adapter =
+        MutableLiveData<AllCarAdapter>().apply {
+            value = AllCarAdapter()
+        }
 
-    fun onExpandText() {
-        isSupportingTextVisible.postValue(!(isSupportingTextVisible.value as Boolean))
-        notifyChange()
-    }
-
-
+    val adapter: LiveData<AllCarAdapter>
+        get() = _adapter
 }
