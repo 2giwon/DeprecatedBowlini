@@ -9,6 +9,8 @@ fun RecyclerView.onSetHasFixedSize(isSet : Boolean) {
 }
 
 @BindingAdapter("app:setAdapter")
-fun RecyclerView.onSetAdapter(instance: RecyclerView.Adapter<*>) {
-    adapter = instance as AllCarAdapter
+fun RecyclerView.onSetAdapter(instance: RecyclerView.Adapter<*>?) {
+    instance?.let {
+        adapter = it as AllCarAdapter
+    }
 }
