@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Bowlini</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="section01_title">ALL CARS</string>
     <string name="section02_title">SELECTED CARS</string>
     <string name="section03_title">FEATURED CARS</string>

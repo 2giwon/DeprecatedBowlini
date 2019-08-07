@@ -4,6 +4,7 @@ package com.beokbeok.bowlini.signupin
 import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.beokbeok.bowlini.R
 import com.beokbeok.bowlini.base.BaseFragment
 import com.beokbeok.bowlini.databinding.FragmentSignUpInBinding
@@ -16,6 +17,7 @@ class SignUpInFragment : BaseFragment<FragmentSignUpInBinding>(
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initBinding()
+        registerObserver()
     }
 
     override fun onActivityResult(
@@ -32,14 +34,32 @@ class SignUpInFragment : BaseFragment<FragmentSignUpInBinding>(
         context?.let {
             vm = SignUpInViewModel(it)
             binding.vm = vm
-            binding.lifecycleOwner = this
-            vm.activityToStart.observe(
-                this,
-                Observer { intent ->
-                    startActivityForResult(intent, RC_SIGN_IN)
-                }
-            )
         }
+    }
+
+    private fun registerObserver() {
+        binding.vm?.errMsg?.observe(
+            this,
+            Observer {
+                showToast(it)
+                binding.vm?.isAuthSuccessful?.value = false
+            }
+        )
+        vm.activityToStart.observe(
+            this,
+            Observer { intent ->
+                startActivityForResult(intent, RC_SIGN_IN)
+            }
+        )
+        vm.isAuthSuccessful.observe(
+            this,
+            Observer { isSuccessful ->
+                if (isSuccessful) {
+                    Navigation.findNavController(binding.btnSignIn)
+                        .navigate(R.id.mainFragment)
+                }
+            }
+        )
     }
 
     companion object {

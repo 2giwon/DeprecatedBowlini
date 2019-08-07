@@ -2,7 +2,6 @@ package com.beokbeok.bowlini.signupin
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.beokbeok.bowlini.R
 import com.beokbeok.bowlini.base.BaseViewModel
@@ -27,6 +26,8 @@ class SignUpInViewModel(
     }
     private val _auth = FirebaseAuth.getInstance()
     val activityToStart = MutableLiveData<Intent>()
+    val errMsg = MutableLiveData<Throwable>()
+    val isAuthSuccessful = MutableLiveData<Boolean>().apply { value = false }
 
     fun signIn() {
         _googleSignInClient?.let {
@@ -40,6 +41,7 @@ class SignUpInViewModel(
                 .getResult(ApiException::class.java)
                 ?.idToken
         } catch (e: ApiException) {
+            errMsg.value = e
             return
         }
         _auth.signInWithCredential(
@@ -48,12 +50,7 @@ class SignUpInViewModel(
                 null
             )
         ).addOnCompleteListener {
-            // TODO UI 업데이트
-            if (it.isSuccessful) {
-                Log.d("kkk", _auth.currentUser.toString())
-            } else {
-                Log.d("kkk", "login fail")
-            }
+            isAuthSuccessful.value = it.isSuccessful
         }
 
     }
