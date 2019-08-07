@@ -22,7 +22,7 @@ class AllCarCardFragment :
         savedInstanceState: Bundle?
     ): View? {
         return super.onCreateView(inflater, container, savedInstanceState)?.apply {
-            (activity as AppCompatActivity).setSupportActionBar(findViewById(R.id.toolbar))
+            (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         }
     }
 }
