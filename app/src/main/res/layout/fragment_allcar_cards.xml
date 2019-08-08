@@ -67,8 +67,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:setAdapter="@{vm.adapter}"
-                    app:setHasFixedSize="@{true}" />
+                    app:setAdapter="@{vm.adapter}" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>

@@ -22,6 +22,7 @@ class AllCarCardFragment :
         savedInstanceState: Bundle?
     ): View? {
         return super.onCreateView(inflater, container, savedInstanceState)?.apply {
+            binding.recyclerviewCarlist.setHasFixedSize(true)
             (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
         }
     }
