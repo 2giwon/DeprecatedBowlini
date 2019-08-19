@@ -1,36 +1,42 @@
 package com.beokbeok.bowlini.allcar
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import androidx.recyclerview.widget.RecyclerView
-import com.beokbeok.bowlini.BR
+import androidx.databinding.library.baseAdapters.BR
 import com.beokbeok.bowlini.R
+import com.beokbeok.bowlini.base.BaseRecyclerView
+import com.beokbeok.bowlini.data.Car
+import com.beokbeok.bowlini.databinding.ItemCardCarDetail2Binding
 
+class AllCarAdapter(
+    viewModel: AllCarViewModel
+) : BaseRecyclerView.Adapter<Car, ItemCardCarDetail2Binding>(
+    layoutRes,
+    bindingVariableId
+) {
 
-class AllCarAdapter : RecyclerView.Adapter<AllCarAdapter.AllCarViewHolder>() {
-    override fun getItemCount(): Int = 10
-
-    override fun onBindViewHolder(holder: AllCarViewHolder, position: Int) {
-        holder.bind(AllCarCardItemViewModel())
+    init {
+        viewModel.getDataSource()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllCarViewHolder {
-        val binding: ViewDataBinding = DataBindingUtil.inflate(
-            LayoutInflater.from(parent.context),
-            R.layout.item_card_car_detail2,
-            parent, false
-        )
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): BaseRecyclerView.ViewHolder<ItemCardCarDetail2Binding> = ViewHolder(parent)
 
-        return AllCarViewHolder(binding)
+    inner class ViewHolder(
+        parent: ViewGroup
+    ) : BaseRecyclerView.ViewHolder<ItemCardCarDetail2Binding>(
+        layoutRes,
+        parent,
+        bindingVariableId
+    ) {
+        init {
+            binding.vm = AllCarCardItemViewModel()
+        }
     }
 
-    class AllCarViewHolder(
-        private val binding :ViewDataBinding
-    ) : RecyclerView.ViewHolder(binding.root)
-    {
-        fun bind(vm: AllCarCardItemViewModel) = binding.setVariable(BR.vm, vm)
+    companion object {
+        private const val layoutRes = R.layout.item_card_car_detail2
+        private const val bindingVariableId = BR.car
     }
-
 }

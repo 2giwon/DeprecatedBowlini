@@ -6,6 +6,10 @@
         <import type="android.view.View" />
 
         <variable
+            name="car"
+            type="com.beokbeok.bowlini.data.Car" />
+
+        <variable
             name="vm"
             type="com.beokbeok.bowlini.allcar.AllCarCardItemViewModel" />
     </data>
@@ -46,7 +50,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/title"
+                android:text="@{car.title}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/colorPrimaryTextDefaultMaterialLight"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +64,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="4dp"
-                android:text="@string/subhead"
+                android:text="@{car.subTitle}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/colorSecondaryTextDefaultMaterialLight"
                 app:layout_constraintBottom_toBottomOf="@id/avatar_image"
@@ -88,7 +92,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:lineSpacingExtra="8dp"
-                android:text="@string/supporting"
+                android:text="@{car.sampleContent}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/colorPrimaryTextDefaultMaterialLight"
                 app:layout_constraintBottom_toTopOf="@id/action_button_1"
@@ -148,7 +152,7 @@
                 android:layout_marginEnd="16dp"
                 android:lineSpacingExtra="8dp"
                 android:paddingBottom="24dp"
-                android:text="@string/expanded_supporting"
+                android:text="@{car.description}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/colorPrimaryTextDefaultMaterialLight"
                 android:visibility="@{vm.supportingTextVisible? View.VISIBLE : View.GONE}"

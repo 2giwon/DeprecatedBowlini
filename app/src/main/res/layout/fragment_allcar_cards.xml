@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="vm"
             type="com.beokbeok.bowlini.allcar.AllCarViewModel" />
@@ -29,7 +28,7 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorAccent"
-                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:title="@string/section01_title">
 
                 <ImageView
@@ -67,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:setAdapter="@{vm.adapter}" />
+                    app:replaceItems="@{vm.cars}" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
