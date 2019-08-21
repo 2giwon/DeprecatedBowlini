@@ -45,9 +45,12 @@ class ScrollAwareFABBehavior(context: Context?, attrs: AttributeSet?) :
     ) {
         super.onNestedScroll(
             coordinatorLayout,
-            child, target,
-            dxConsumed, dyConsumed,
-            dxUnconsumed, dyUnconsumed,
+            child,
+            target,
+            dxConsumed,
+            dyConsumed,
+            dxUnconsumed,
+            dyUnconsumed,
             type
         )
 
