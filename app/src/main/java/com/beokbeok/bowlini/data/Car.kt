@@ -2,9 +2,9 @@ package com.beokbeok.bowlini.data
 
 
 data class Car(
-    var id: Int = 0,
-    var title: String = "",
-    var subTitle: String="",
-    var sampleContent: String="",
-    var description: String = ""
+    val id: Int = 0,
+    val title: String = "",
+    val subTitle: String="",
+    val sampleContent: String="",
+    val description: String = ""
 )
