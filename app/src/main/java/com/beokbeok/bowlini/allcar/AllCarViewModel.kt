@@ -14,7 +14,7 @@ class AllCarViewModel(private val context: Context?) : BaseViewModel() {
 
     fun getDataSource() {
         context?.let {
-            _cars.value = FakeItemsRemoteDataResource.createCarItems(context)
+            _cars.value = FakeItemsRemoteDataResource.createCarItems(it)
         }
     }
 }
